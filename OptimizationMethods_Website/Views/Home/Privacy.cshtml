@@ -1,0 +1,155 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<form method="post" action="~/Home/Privacy">
+    <center><h3>Численные методы второго прядка многомерной безусловной оптимизации</h3></center>
+    <br />
+    <div class="main">
+        <label>F(x) = </label>
+        <input style="width: 250px" type="text" value="2*(x2-x1^2)^2 + (1-x1)^2" readonly="readonly" />
+        <br />
+        <label>Начальная точка</label>
+
+        <label style="font-size: 30px; padding: 0px 5px 0px 0px;">( </label> <input class="input-point" type="text" name="pointOne" value="@ViewBag.pointOne" /><label style="font-size: 30px; padding: 0px 0px 0px 5px; "> ; </label>
+        <input class="input-point" type="text" name="pointTwo" value="@ViewBag.pointTwo" /><label style="font-size: 30px; padding: 0px 0px 0px 5px;"> )</label>
+        @*<br />*@
+        @*<label>Количество итераций </label>
+
+            <select name="countIteration" value="@ViewBag.countIteration">
+                <option value="2">1</option>
+                <option value="3">2</option>
+                <option value="4">3</option>
+                <option value="5">4</option>
+                <option value="6">5</option>
+                <option value="7">6</option>
+                <option value="8">7</option>
+                <option value="9">8</option>
+                <option value="10">9</option>
+                <option value="11">10</option>
+            </select>*@
+        <br />
+        <label>Точность ε = </label>
+        <input style="width: 110px" type="text" name="accuracy" value="@ViewBag.accuracy" />
+        <br />
+
+        <input class="button-result" type="submit" value="Рассчитать" />
+    </div>
+</form>
+
+
+
+<hr />
+@if (ViewBag.сonstantNewton != null)
+{
+    <div class="frames">
+        <label style="margin: 0px 0px 0px 20px;font-size: 25px">Метод Ньютона с постоянным шагом</label>
+        <br />
+        @foreach (var i in ViewBag.сonstantNewton)
+        {
+            <div style="margin: 10px 0px 0px 100px">@i</div>
+        }
+    </div>
+
+    <div class="framesA">
+        <label style="margin: 0px 0px 0px 20px; font-size: 25px">Метод Ньютона с регулировкой шага</label>
+        <br />
+        @foreach (var i in ViewBag.adjustmentNewton)
+        {
+            <div style="margin: 10px 0px 0px 100px">@i</div>
+        }
+    </div>
+}
+
+
+
+<style>
+    .frames {
+        border-radius: 5px;
+        margin: 0px 0px 0px 500px;
+        padding: 0px 0px 0px 10px;
+        color: transparent;
+        background: #666666;
+        color: #333333;
+        background: #FFFFFF;
+        color: #333333;
+        background: #FFFFFF;
+        width: 500px;
+        height: auto; /* Размеры */
+        outline: 2px solid #000; /* Чёрная рамка */
+        border: 3px solid #fff; /* Белая рамка*/
+        border-radius: 10px; /*Радиус скругления */
+        position: absolute;
+        left: 500px;
+        right: 0px;
+    }
+
+    .framesA {
+        border-radius: 5px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 10px;
+        color: transparent;
+        background: #666666;
+        color: #333333;
+        background: #FFFFFF;
+        color: #333333;
+        background: #FFFFFF;
+        width: 500px;
+        height: auto; /* Размеры */
+        outline: 2px solid #000; /* Чёрная рамка */
+        border: 3px solid #fff; /* Белая рамка*/
+        border-radius: 10px; /*Радиус скругления */
+        /*       position: absolute;
+         left: 300px;
+        right: 0px;*/
+    }
+
+
+
+
+
+
+    .main {
+        margin: 10px 0px 0px 400px;
+    }
+
+    .method-fastest {
+        margin: 10px 0px 30px 250px;
+    }
+
+    .input-point {
+    }
+
+    .button-result {
+        margin: 10px 0px 30px 100px;
+        width: 150px;
+        height: 35px;
+        border: none;
+        border: solid 2px #240fdc;
+        border-radius: 5px;
+        background: #240fdc;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        /*  position: absolute;*/
+        /* left: 500px;
+        right: 0px;*/
+    }
+
+    .input-point {
+        width: 40px;
+    }
+</style>
+
+
+
+
+
+
+@*<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>*@
+
+<script>
+
+</script>
+@*<div>@ViewBag.archiveTrue</div>*@

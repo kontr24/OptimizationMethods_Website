@@ -1,0 +1,206 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@*<head>
+    <link rel="icon" type="image/x-icon" href="~/Images/favicon.ico">
+</head>*@
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+<form method="post" action="~/Home/Index">
+    @*<h1 class="method-fastest">Метод наискорейшего спуска</h1>*@
+    <center><h3>Численные методы первого порядка многомерной безусловной оптимизации</h3></center>
+    <br />
+    <div class="main">
+        <label>F(x) = </label>
+        <input style="width: 250px" type="text" value="2*(x2-x1^2)^2 + (1-x1)^2" readonly="readonly" />
+        <br />
+        <label>Начальная точка</label>
+
+        @*@Html.Editor("78", new { htmlAttributes = new { @id = "pointOne1", maxlength = "7" } })*@
+
+        <label style="font-size: 30px; padding: 0px 5px 0px 0px;">( </label> <input class="input-point" type="text" name="pointOne" value="@ViewBag.pointOne" /><label style="font-size: 30px; padding: 0px 0px 0px 5px; "> ; </label>
+        <input class="input-point" type="text" name="pointTwo" value="@ViewBag.pointTwo" /><label style="font-size: 30px; padding: 0px 0px 0px 5px;"> )</label>
+        <br />
+        <label>Точность ε = </label>
+        <input style="width: 100px" type="text" name="accuracy" value="@ViewBag.accuracy" />
+        <br />
+
+        <input class="button-result" type="submit" value="Рассчитать" />
+    </div>
+</form>
+
+<hr />
+
+@if (ViewBag.pointTwo != null)
+{
+    <label class="frames">
+        <label style="margin: 0px 0px 0px 50px;font-size: 25px">Метод наискорейшего спуска</label>
+        <br />
+        <label style="margin: 10px 0px 0px 150px;">@ViewBag.iterations</label>
+        <br />
+        <label style="margin: 10px 0px 0px 150px;">@ViewBag.minimum</label>
+        <br />
+        <label style="margin: 10px 0px 0px 150px;">@ViewBag.function</label>
+    </label>
+
+    <label class="framesG">
+        <label style="margin: 0px 0px 0px 50px; font-size: 25px">Метод сопряженных градиентов</label>
+        <br />
+        <label style="margin: 10px 0px 0px 100px;">@ViewBag.iterationsG</label>
+        <br />
+        <label style="margin: 10px 0px 0px 100px;">@ViewBag.minimumG</label>
+        <br />
+        <label style="margin: 10px 0px 0px 100px;">@ViewBag.functionG</label>
+        <br />
+        <label style="margin: 10px 0px 0px 100px;">@ViewBag.errorMsg</label>
+    </label>
+
+    <hr />
+    <br />
+    <div class="framesC">
+        <label style="margin: 0px 0px 0px 300px; font-size: 25px">Метод с дроблением шага</label>
+        <br /><br />
+
+        @if (ViewBag.functionC != null)
+        {
+            @foreach (var i in ViewBag.functionC)
+            {
+                <div style="margin: 0px 0px 0px 150px">@i</div>
+            }
+        }
+    </div>
+}
+
+<style>
+    .frames {
+        border-radius: 5px;
+        margin: 0px 0px 0px 500px;
+        padding: 0px 0px 0px 10px;
+        color: transparent;
+        background: #666666;
+        color: #333333;
+        background: #FFFFFF;
+        color: #333333;
+        background: #FFFFFF;
+        width: 500px;
+        height: auto; /* Размеры */
+        outline: 2px solid #000; /* Чёрная рамка */
+        border: 3px solid #fff; /* Белая рамка*/
+        border-radius: 10px; /*Радиус скругления */
+        position: absolute;
+        left: 500px;
+        right: 0px;
+    }
+
+    .framesG {
+        border-radius: 5px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 10px;
+        color: transparent;
+        background: #666666;
+        color: #333333;
+        background: #FFFFFF;
+        color: #333333;
+        background: #FFFFFF;
+        width: 500px;
+        height: auto; /* Размеры */
+        outline: 2px solid #000; /* Чёрная рамка */
+        border: 3px solid #fff; /* Белая рамка*/
+        border-radius: 10px; /*Радиус скругления */
+        /*       position: absolute;
+             left: 300px;
+            right: 0px;*/
+    }
+
+
+    .framesC {
+        /*font-size: 150%;*/
+        /* border: 3px solid black;*/
+        /*width: 600px;*/
+        border-radius: 5px;
+        margin: 0px 0px 0px 70px;
+        padding: 0px 0px 0px 10px;
+        color: transparent;
+        background: #666666;
+        color: #333333;
+        background: #FFFFFF;
+        /*text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);*/ /*тень от букв*/
+        color: #333333;
+        background: #FFFFFF;
+        width: auto;
+        height: auto; /* Размеры */
+        /*background: #f8f8a6;*/ /*Цвет фона */
+        outline: 2px solid #000; /* Чёрная рамка */
+        border: 3px solid #fff; /* Белая рамка*/
+        border-radius: 10px; /*Радиус скругления */
+    }
+
+
+
+
+
+
+    .main {
+        margin: 10px 0px 0px 400px;
+    }
+
+    .method-fastest {
+        margin: 10px 0px 30px 250px;
+    }
+
+    .input-point {
+    }
+
+    .button-result {
+        margin: 10px 0px 30px 100px;
+        width: 150px;
+        height: 35px;
+        border: none;
+        border: solid 2px #240fdc;
+        border-radius: 5px;
+        background: #240fdc;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        /*  position: absolute;*/
+        /* left: 500px;
+            right: 0px;*/
+    }
+
+    .input-point {
+        width: 40px;
+    }
+</style>
+
+
+
+
+
+
+@*<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>*@
+
+<script>
+                                    ////Сохранение данных в поле ввода
+                                    //document.getElementById("pointOne").value = getSavedValue("pointOne");
+                                    //document.getElementById("pointTwo").value = getSavedValue("pointTwo");
+                                    //document.getElementById("accuracy").value = getSavedValue("accuracy");
+
+                                    //function saveValue(e) {
+                                    //    var id = e.id;
+                                    //    var val = e.value;
+                                    //    localStorage.setItem(id, val);
+                                    //}
+
+                                    //function getSavedValue(v) {
+                                    //    if (localStorage.getItem(v) === null) {
+                                    //        return "";
+                                    //    }
+                                    //    return localStorage.getItem(v);
+                                    //}
+                                    ////Сохранение данных в поле ввода
+</script>
+@*<div>@ViewBag.archiveTrue</div>*@
