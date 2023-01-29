@@ -9,20 +9,20 @@ https://cloud.mail.ru/public/b9Q5/vfxmdUHof
 <hr/>
 <h2 align="center">Численные методы первого порядка многомерной безусловной оптимизации</h2>
 <p align="center">
-  <a href="123"><img src="123"></img></a>
+  <a href="123"><img src="https://github.com/kontr24/OptimizationMethods_Website/blob/55cdc1cd4c00e61d8bf51aee9042b517ffefbbea/ScreenshotsApplication/NumericalMethodsFirstOrderMultidimensionalUnconditionalOptimization.png"></img></a>
 </p>
 <hr/>
 <h2 align="center">Численные методы второго прядка многомерной безусловной оптимизации</h2>
 <p align="center">
-  <a href="123"><img src="123"></img></a>
+  <a href="123"><img src="https://github.com/kontr24/OptimizationMethods_Website/blob/55cdc1cd4c00e61d8bf51aee9042b517ffefbbea/ScreenshotsApplication/Second-orderNumericalMethodsMultidimensionalUnconditionalOptimization.png"></img></a>
 </p>
 <hr/>
 <h2 align="center">Прямые методы численного решения задач нелинейного программирования</h2>
 <p align="center">
-  <a href="123"><img src="123"></img></a>
+  <a href="123"><img src="https://github.com/kontr24/OptimizationMethods_Website/blob/55cdc1cd4c00e61d8bf51aee9042b517ffefbbea/ScreenshotsApplication/DirectMethodsNumericalSolutionNonlinearProgrammingProblems.png"></img></a>
 </p>
 <hr/>
 <h2 align="center">Метод внутренних штрафных функций численного решения задач нелинейного программирования</h2>
 <p align="center">
-  <a href="123"><img src="123"></img></a>
+  <a href="123"><img src="https://github.com/kontr24/OptimizationMethods_Website/blob/55cdc1cd4c00e61d8bf51aee9042b517ffefbbea/ScreenshotsApplication/MethodInternalPenaltyFunctionsNumericalSolutionNonlinearProgrammingProblems.png"></img></a>
 </p>
